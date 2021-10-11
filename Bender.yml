@@ -1,0 +1,27 @@
+package:
+  name: udma_camera
+  authors: 
+    - "Antonio Pullini <pullinia@iis.ee.ethz.ch>"
+    - "Jie Chen <jie.chen@greenwaves-technologies.com>"
+    - "Florent Rotenberg <florent.rotenberg@greenwaves-technologies.com>"
+    - "Alfio Di Mauro <adimauro@iis.ee.ethz.ch>"
+    - "Pasquale Davide Schiavone <pschiavo@iis.ee.ethz.ch>"
+
+dependencies:
+  tech_cells_generic: { git: "https://github.com/pulp-platform/tech_cells_generic.git", version: 0.2.3 }
+  udma_core:    {git: "git@github.com:siracusa-soc/udma_core.git", rev: "master" }
+
+sources:
+  -
+    files:
+      - rtl/cpi_pkg.sv
+      - rtl/camera_reg_if.sv
+      - rtl/camera_if.sv
+      - rtl/udma_cpi_wrap.sv
+      - target: uvm
+        files:
+          - uvm_tb/camera_verisuite_pkg.sv
+          - uvm_tb/interface.sv
+          - uvm_tb/camera_verisuite.sv
+          - uvm_tb/udma_camera_tb.sv
+
